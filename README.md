@@ -2,7 +2,7 @@
 
 This playbook gives you a quick way of setting an LDAP backend using an AWX container, along with the necessary Tower configurations.
 
-### Requirements:
+### Instructions:
 
 1. Have an Ubuntu 14 machine ready, along with the credential for SSH-ing into it (*e.g.*, spawn an ec2 Ubuntu 14 instance) Make sure TCP ports 22, 636 and 389 are open to the world.
 
