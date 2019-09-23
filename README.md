@@ -6,7 +6,7 @@ This playbook gives you a quick way of setting an LDAP backend using an AWX cont
 
 1. Have an Ubuntu 14 machine ready, along with the credential for SSH-ing into it (*e.g.*, spawn an ec2 Ubuntu 14 instance); make sure TCP ports 22, 636 and 389 are open to the world.
 
-2. In AWX, create a git project using this repo: [PLACEHOLDER URL] https://github.com/jangsutsr/deploy_ldap.git
+2. In AWX, create a git project using this repo: https://github.com/ansible/deploy_ldap
 
 3. In AWX, create an Inventory containing the Ubuntu 14 machine in Step 1, as well as a Machine Credential containing the credential from Step 1.
 
