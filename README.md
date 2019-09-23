@@ -1,18 +1,20 @@
-# deploy_ldap
+# `deploy_ldap`
 
-This playbook gives you a quick way of setting an ldap backend up and running using awx container, alone with needed Tower configurations.
+This playbook gives you a quick way of setting an LDAP backend using an AWX container, along with the necessary Tower configurations.
 
-1. Have a Ubuntu 14 machine ready, alone with the credential needed to ssh onto it. (For example, spawn an ec2 Ubuntu 14 instance) Make sure TCP ports 22, 636 and 389 are open to the world.
+### Requirements:
 
-2. In AWX, create a git project using this repo: https://github.com/jangsutsr/deploy_ldap.git.
+1. Have an Ubuntu 14 machine ready, along with the credential for SSH-ing into it (*e.g.*, spawn an ec2 Ubuntu 14 instance) Make sure TCP ports 22, 636 and 389 are open to the world.
 
-3. In AWX, create an inventory containing the Ubuntu 14 machine in step 1, and a machine credential against the credential in step 1.
+2. In AWX, create a git project using this repo: [PLACEHOLDER URL] https://github.com/jangsutsr/deploy_ldap.git
 
-4. In AWX, create a job template using the project, inventory and credential created. Note 'Enable Privilege Escalation' should be checked also.
+3. In AWX, create an Inventory containing the Ubuntu 14 machine in Step 1, as well as a Machine Credential containing the credential from Step 1.
 
-5. Launch the job template to deploy LDAP backend on the Ubuntu 14 machine.
+4. In AWX, create a Job Template using the Project, Inventory and Credential created. Note that 'Enable Privilege Escalation' should also be checked.
 
-6. Configure your AWX to use the LDAP backend by PATCH to `/api/v2/settings/ldap/`:
+5. Launch the Job Template in order to deploy the LDAP backend on the Ubuntu 14 machine.
+
+6. Configure your AWX to use the LDAP backend by PATCH-ing to `/api/v2/settings/ldap/`:
 ```
 {
     "AUTH_LDAP_SERVER_URI": "ldap://<name of you Ubuntu 14 machine>",
@@ -77,7 +79,7 @@ This playbook gives you a quick way of setting an ldap backend up and running us
 }
 ```
 
-7. Test deploy by logging in LDAP users. The LDAP organization layout is as follows:
+7. Test the deployment by logging in the LDAP users. The LDAP organization layout is as follows:
 ```
 LDAP Organization
   username: super_user1
